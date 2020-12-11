@@ -7,6 +7,7 @@ const app = express();
 
 //Carrega os Models
 const Product = require('./models/Products');
+const Customer = require('./Models/customer');
 
 //Carrega as rotas
 const indexRoute = require('./Routes/indexRoute');
