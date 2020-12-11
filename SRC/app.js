@@ -4,9 +4,16 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const router = express.Router();
 
-// Database
+//Carrega os Models
+const Product = require('./models/Products');
+
+//Carrega as rotas
+const indexRoute = require('./Routes/indexRoute');
+const productRoute = require('./Routes/productsRoute');
+
+
+// Conectar ao banco
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
     useNewUrlParser: true
 });
@@ -15,10 +22,6 @@ const db = mongoose.connection;
   
 db.on('connected', () => {
     console.log('Mongoose default connection is open');
-});
-
-db.on('error', err => {
-    console.log(`Mongoose default connection has occured \n${err}`);
 });
 
 db.on('disconnected', () => {
@@ -36,13 +39,12 @@ process.on('SIGINT', () => {
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
+app.use('/', indexRoute);
+app.use('/riscos', productRoute)
 
-const index = require('./Routes/indexRoute')
-const products = require('./Routes/productsRoute')
-
-app.use('/', index);
-app.use('/riscos', products)
 
 module.exports = app;
