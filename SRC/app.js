@@ -6,12 +6,12 @@ require('dotenv').config();
 const app = express();
 
 //Carrega os Models
-const Product = require('./models/Products');
-const Customer = require('./Models/customer');
+const Product = require('./models/products');
+const Customer = require('./models/customer');
 
 //Carrega as rotas
-const indexRoute = require('./Routes/indexRoute');
-const productRoute = require('./Routes/productsRoute');
+const indexRoute = require('./routes/indexRoute');
+const productRoute = require('./routes/productsRoute');
 
 
 // Conectar ao banco
@@ -46,6 +46,5 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', indexRoute);
 app.use('/riscos', productRoute)
-
 
 module.exports = app;

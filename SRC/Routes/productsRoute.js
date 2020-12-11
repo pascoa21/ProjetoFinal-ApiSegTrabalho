@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('../Controllers/product-controller')
+const controllers = require('../controllers/product-controller')
 
 router.get('/',controllers.get);
 router.get('/:risc', controllers.getByRisc);
