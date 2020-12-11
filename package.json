@@ -1,0 +1,29 @@
+{
+  "name": "projetofinal-apisegtrabalho",
+  "version": "1.0.0",
+  "description": "Projeto de conclusão final do curso de Backend da {Reprograma}. Ideia principal da API fornecer dados relacionados a segurançan do trabalho de forma mais agil e segura.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascoa21/ProjetoFinal-ApiSegTrabalho.git"
+  },
+  "author": "Jessyca Pascoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pascoa21/ProjetoFinal-ApiSegTrabalho/issues"
+  },
+  "homepage": "https://github.com/pascoa21/ProjetoFinal-ApiSegTrabalho#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "http": "0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
