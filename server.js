@@ -1,6 +1,6 @@
 const http = require('http');
 const debug = require('debug')('nodestr:server');
-const app = require('./SRC/app')
+const app = require('./src/app')
 
 const port = normalizePort(process.env.PORT) || '3030'; /*No e interessante fixar a porta do servidor, sera modificado*/
 const server = http.createServer(app);
